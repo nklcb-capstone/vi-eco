@@ -2,6 +2,7 @@ package com.server.vieco.domain;
 
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,7 +12,8 @@ import java.time.LocalDateTime;
 
 @Entity
 @Getter
-public class news {
+@NoArgsConstructor
+public class News {
 
     @Id @GeneratedValue
     @Column(name = "news_id")
@@ -36,7 +38,7 @@ public class news {
     private LocalDateTime savedDateTime;
 
     @Builder
-    public news(String title, String content, LocalDateTime newsDateTime, String companyName, String category, LocalDateTime savedDateTime) {
+    public News(String title, String content, LocalDateTime newsDateTime, String companyName, String category, LocalDateTime savedDateTime) {
         this.title = title;
         this.content = content;
         this.newsDateTime = newsDateTime;
