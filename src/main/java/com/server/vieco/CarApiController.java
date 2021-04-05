@@ -29,7 +29,6 @@ public class CarApiController {
             if (zcode != null) {
                 apiUrl += "&zcode=" + zcode;
             }
-            System.out.println(apiUrl);
             URL url = new URL(apiUrl);
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.connect();
