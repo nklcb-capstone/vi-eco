@@ -58,7 +58,7 @@ public class RestTestController {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(bufferedInputStream, "UTF-8"));
             String returnLine;
             while((returnLine = bufferedReader.readLine()) != null) {
-                result.append(returnLine + "\n");
+                result.append(returnLine);
             }
 
             JSONObject jsonObject = XML.toJSONObject(result.toString());
