@@ -60,5 +60,4 @@ public class CarApiController {
         CarInformation carInformation = new CarInformation("test", "test", "test", "test", "test");
         return carInformation;
     }
-
 }
