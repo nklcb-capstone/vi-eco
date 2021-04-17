@@ -1,5 +1,8 @@
 package com.server.vieco;
 
+import com.server.vieco.domain.CarInformation;
+import com.server.vieco.service.CarInformationService;
+import lombok.RequiredArgsConstructor;
 import org.json.JSONObject;
 import org.json.XML;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +18,10 @@ import java.net.URL;
 
 
 @RestController
+@RequiredArgsConstructor
 public class CarApiController {
+
+    private final CarInformationService carInformationService;
 
     @GetMapping("/api/car/electric/station")
     public String callElectricCarApiWithJson(@RequestParam Long numOfRows, @RequestParam Long pageNo, @RequestParam(required = false) Long zcode) {
@@ -35,7 +41,7 @@ public class CarApiController {
             BufferedInputStream bufferedInputStream = new BufferedInputStream(urlConnection.getInputStream());
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(bufferedInputStream, "UTF-8"));
             String returnLine;
-            while((returnLine = bufferedReader.readLine()) != null) {
+            while ((returnLine = bufferedReader.readLine()) != null) {
                 result.append(returnLine);
             }
 
@@ -46,5 +52,11 @@ public class CarApiController {
         }
 
         return jsonPrintString;
+    }
+
+    @GetMapping("/api/car/information")
+    public CarInformation callCarInformation(@RequestParam String carName) {
+        CarInformation carInformation = carInformationService.findByName(carName);
+        return carInformation;
     }
 }
