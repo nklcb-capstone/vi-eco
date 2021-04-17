@@ -55,7 +55,7 @@ public class CarApiController {
     }
 
     @GetMapping("/api/car/information")
-    public CarInformation callCarInformation(@RequestParam String carName) {
+    public CarInformation callCarInformation() {
 //        CarInformation carInformation = carInformationService.findByName(carName);
         CarInformation carInformation = new CarInformation("test", "test", "test", "test", "test");
         return carInformation;
