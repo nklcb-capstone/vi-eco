@@ -8,6 +8,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.NoResultException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
@@ -21,10 +26,38 @@ public class CarInformationService {
                 .getId();
     }
 
+    public List<CarInformationResponseDto> findAll() {
+        List<CarInformation> all = carInformationRepository.findAll();
+        List<CarInformationResponseDto> dtoEntities = new ArrayList<>();
+
+        for (CarInformation entity : all) {
+            CarInformationResponseDto result = new CarInformationResponseDto(entity);
+            dtoEntities.add(result);
+        }
+
+        return dtoEntities;
+    }
 
     public CarInformationResponseDto findById(Long id) {
         CarInformation entity = carInformationRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 자동차 정보가 없습니다. id = " + id));
         return new CarInformationResponseDto(entity);
+    }
+
+    public List<CarInformationResponseDto> findByCarNameLike(String carName) {
+        List<CarInformation> entities = null;
+        List<CarInformationResponseDto> dtoEntities = new ArrayList<>();
+        try {
+            entities = carInformationRepository.findByCarNameLike(carName);
+
+            for (CarInformation entity : entities) {
+                CarInformationResponseDto result = new CarInformationResponseDto(entity);
+                dtoEntities.add(result);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return dtoEntities;
     }
 }
