@@ -1,17 +1,15 @@
 package com.server.vieco.domain;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 
 @Repository
-@RequiredArgsConstructor
-public class CarInformationRepository {
-
-    private final EntityManager em;
-
+public interface CarInformationRepository extends JpaRepository<CarInformation, Long> {
+    /*
     public CarInformation findByName(String carName) {
         CarInformation carInformation = null;
         try {
@@ -22,4 +20,5 @@ public class CarInformationRepository {
         }
         return carInformation;
     }
+     */
 }
