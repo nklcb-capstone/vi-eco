@@ -14,6 +14,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.List;
 
 
 @RestController
@@ -58,9 +59,23 @@ public class CarApiController {
         return carInformationService.save(carInformationRequestDto);
     }
 
-    @GetMapping("/api/car/information/{id}")
+//    @GetMapping("/api/car/information/search")
+//    public List<CarInformationResponseDto> findAll() {
+//        return carInformationService.findAll();
+//    }
+
+    @GetMapping("/api/car/information/search/{id}")
     public CarInformationResponseDto findById(@PathVariable Long id) {
         return carInformationService.findById(id);
+    }
+
+
+    @GetMapping("/api/car/information/search")
+    public List<CarInformationResponseDto> findByCarNameLike(@RequestParam(required = false) String carName) {
+        if (carName == null) {
+            return carInformationService.findAll();
+        }
+        return carInformationService.findByCarNameLike(carName);
     }
 }
 
