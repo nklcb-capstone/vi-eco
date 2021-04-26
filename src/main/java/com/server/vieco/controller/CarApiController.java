@@ -1,14 +1,13 @@
-package com.server.vieco;
+package com.server.vieco.controller;
 
 import com.server.vieco.domain.CarInformation;
 import com.server.vieco.service.CarInformationService;
+import com.server.vieco.web.dto.CarInformationRequestDto;
+import com.server.vieco.web.dto.CarInformationResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.json.JSONObject;
 import org.json.XML;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -54,10 +53,33 @@ public class CarApiController {
         return jsonPrintString;
     }
 
-    @GetMapping("/api/car/information")
-    public CarInformation callCarInformation(@RequestParam String carName) {
-        CarInformation carInformation = carInformationService.findByName(carName);
-//        CarInformation carInformation = new CarInformation("test", "test", "test", "test", "test");
-        return carInformation;
+    @PostMapping("/api/car/information")
+    public Long save(@RequestBody CarInformationRequestDto carInformationRequestDto) {
+        return carInformationService.save(carInformationRequestDto);
+    }
+
+    @GetMapping("/api/car/information/{id}")
+    public CarInformationResponseDto findById(@PathVariable Long id) {
+        return carInformationService.findById(id);
     }
 }
+
+/**
+ * 전기 자동차 정보 검색 api
+ * [url]/api/car/information?carName={자동차이름}
+ */
+
+/**
+ * 수 자동차 정보 검색 api
+ * [url]/api/car/information?carName={자동차이름}&type={자동차타입 ex)수소차, 전기}
+ */
+
+/**
+ * 뉴스 api
+ * [url]/api/car/news?type={자동차타입}
+ */
+
+/**
+ * 뉴스 api
+ * [url]/api/car/news?type={자동차타입}&search={검색내용}
+ */
