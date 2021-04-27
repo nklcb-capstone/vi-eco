@@ -8,11 +8,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.NoResultException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
@@ -48,7 +43,7 @@ public class CarInformationService {
         List<CarInformation> entities = null;
         List<CarInformationResponseDto> dtoEntities = new ArrayList<>();
         try {
-            entities = carInformationRepository.findByCarNameLike(carName);
+            entities = carInformationRepository.findByCarNameContaining(carName);
 
             for (CarInformation entity : entities) {
                 CarInformationResponseDto result = new CarInformationResponseDto(entity);

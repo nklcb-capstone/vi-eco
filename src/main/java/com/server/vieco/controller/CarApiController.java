@@ -71,11 +71,11 @@ public class CarApiController {
 
 
     @GetMapping("/api/car/information/search")
-    public List<CarInformationResponseDto> findByCarNameLike(@RequestParam(required = false) String carName) {
+    public List<CarInformationResponseDto> findByCarNameContaining(@RequestParam(required = false) String carName) {
         if (carName == null) {
             return carInformationService.findAll();
         }
-        return carInformationService.findByCarNameLike(carName);
+        return carInformationService.findByCarNameContaining(carName);
     }
 }
 
