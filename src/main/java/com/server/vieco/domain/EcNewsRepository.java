@@ -8,5 +8,5 @@ import java.util.List;
 @Repository
 public interface EcNewsRepository extends JpaRepository<EcNews, Long> {
 
-    public List<CarInformation> findByTitleContaining(String title);
+    public List<EcNews> findByTitleContaining(String title);
 }

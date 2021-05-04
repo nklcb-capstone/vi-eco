@@ -34,4 +34,21 @@ public class EcNewsService {
                 .orElseThrow(() -> new IllegalArgumentException("해당 뉴스 정보가 없습니다. id = " + id));
         return new EcNewsResponseDto(entity);
     }
+
+    public List<EcNewsResponseDto> findByTitleContaining(String title) {
+        List<EcNews> entities = null;
+        List<EcNewsResponseDto> dtoEntities = new ArrayList<>();
+        try {
+            entities = ecNewsRepository.findByTitleContaining(title);
+
+            for (EcNews entity : entities) {
+                EcNewsResponseDto result = new EcNewsResponseDto(entity);
+                dtoEntities.add(result);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return dtoEntities;
+    }
 }
