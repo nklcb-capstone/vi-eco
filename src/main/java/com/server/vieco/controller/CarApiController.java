@@ -59,10 +59,10 @@ public class CarApiController {
         return carInformationService.save(carInformationRequestDto);
     }
 
-//    @GetMapping("/api/car/information/search")
-//    public List<CarInformationResponseDto> findAll() {
-//        return carInformationService.findAll();
-//    }
+    @GetMapping("/api/car/information/search")
+    public List<CarInformationResponseDto> findAll() {
+        return carInformationService.findAll();
+    }
 
     @GetMapping("/api/car/information/search/{id}")
     public CarInformationResponseDto findById(@PathVariable Long id) {
