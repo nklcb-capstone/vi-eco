@@ -28,4 +28,10 @@ public class EcNewsService {
 
         return dtoEntities;
     }
+
+    public EcNewsResponseDto findById(Long id) {
+        EcNews entity = ecNewsRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("해당 뉴스 정보가 없습니다. id = " + id));
+        return new EcNewsResponseDto(entity);
+    }
 }

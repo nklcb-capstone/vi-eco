@@ -1,14 +1,11 @@
 package com.server.vieco.web.dto;
 
 import com.server.vieco.domain.EcNews;
-import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Getter
-@NoArgsConstructor
 public class EcNewsResponseDto {
 
     private Long id;
