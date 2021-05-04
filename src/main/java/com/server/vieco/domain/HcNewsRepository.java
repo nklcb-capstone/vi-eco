@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface HcNewsRepository extends JpaRepository<HcNews, Long> {
 
-    public List<CarInformation> findByTitleContaining(String title);
+    public List<HcNews> findByTitleContaining(String title);
 }
