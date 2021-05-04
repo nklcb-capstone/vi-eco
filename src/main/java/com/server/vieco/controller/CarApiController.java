@@ -2,8 +2,10 @@ package com.server.vieco.controller;
 
 import com.server.vieco.domain.CarInformation;
 import com.server.vieco.service.CarInformationService;
+import com.server.vieco.service.EcNewsService;
 import com.server.vieco.web.dto.CarInformationRequestDto;
 import com.server.vieco.web.dto.CarInformationResponseDto;
+import com.server.vieco.web.dto.EcNewsResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.json.JSONObject;
 import org.json.XML;
@@ -22,6 +24,7 @@ import java.util.List;
 public class CarApiController {
 
     private final CarInformationService carInformationService;
+    private final EcNewsService ecNewsService;
 
     @GetMapping("/api/car/electric/station")
     public String callElectricCarApiWithJson(@RequestParam Long numOfRows, @RequestParam Long pageNo, @RequestParam(required = false) Long zcode) {
@@ -59,10 +62,10 @@ public class CarApiController {
         return carInformationService.save(carInformationRequestDto);
     }
 
-    @GetMapping("/api/car/information/search")
-    public List<CarInformationResponseDto> findAll() {
-        return carInformationService.findAll();
-    }
+//    @GetMapping("/api/car/information/search")
+//    public List<CarInformationResponseDto> findAll() {
+//        return carInformationService.findAll();
+//    }
 
     @GetMapping("/api/car/information/search/{id}")
     public CarInformationResponseDto findById(@PathVariable Long id) {
@@ -76,6 +79,11 @@ public class CarApiController {
             return carInformationService.findAll();
         }
         return carInformationService.findByCarNameContaining(carName);
+    }
+
+    @GetMapping("/api/news/search")
+    public List<EcNewsResponseDto> findAll() {
+        return ecNewsService.findAll();
     }
 }
 
