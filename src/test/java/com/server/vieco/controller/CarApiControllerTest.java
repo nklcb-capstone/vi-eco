@@ -42,6 +42,7 @@ class CarApiControllerTest {
         carInformationRepository.deleteAll();
     }
 
+    /*
     @Test
     public void CarInformation_등록된다() throws Exception {
         //given
@@ -72,6 +73,7 @@ class CarApiControllerTest {
         List<CarInformation> all = carInformationRepository.findAll();
         assertThat(all.get(0).getCarName()).isEqualTo(carName);
     }
+     */
 
 /*
     @Test
