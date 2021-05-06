@@ -44,11 +44,11 @@ public class CarInformationService {
         return new CarInformationResponseDto(entity);
     }
 
-    public List<CarInformationResponseDto> findByCarNameContaining(String carName) {
+    public List<CarInformationResponseDto> findByCarNameContainingAndCarType(String carName, String carType) {
         List<CarInformation> entities = null;
         List<CarInformationResponseDto> dtoEntities = new ArrayList<>();
         try {
-            entities = carInformationRepository.findByCarNameContaining(carName);
+            entities = carInformationRepository.findByCarNameContainingAndCarType(carName, carType);
 
             for (CarInformation entity : entities) {
                 CarInformationResponseDto result = new CarInformationResponseDto(entity);
@@ -60,4 +60,22 @@ public class CarInformationService {
 
         return dtoEntities;
     }
+    /*
+    public List<CarInformationResponseDto> findByCarNameContaining(String carName, String carType) {
+        List<CarInformation> entities = null;
+        List<CarInformationResponseDto> dtoEntities = new ArrayList<>();
+        try {
+            entities = carInformationRepository.findByCarNameContainingAndCarType(carName, carType);
+
+            for (CarInformation entity : entities) {
+                CarInformationResponseDto result = new CarInformationResponseDto(entity);
+                dtoEntities.add(result);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return dtoEntities;
+    }
+     */
 }
