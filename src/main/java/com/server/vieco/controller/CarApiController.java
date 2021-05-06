@@ -76,7 +76,7 @@ public class CarApiController {
     @GetMapping("/api/car/information/search")
     public List<CarInformationResponseDto> findByCarNameContainingAndCarType(@RequestParam(required = false) String carName, String carType) {
 
-        return carInformationService.findByCarNameContainingAndCarType(carName, carType);
+        return carInformationService.findByCarNameContainingAndCarTypeContaining(carName, carType);
     }
 
     @GetMapping("/api/news/search")

@@ -44,11 +44,11 @@ public class CarInformationService {
         return new CarInformationResponseDto(entity);
     }
 
-    public List<CarInformationResponseDto> findByCarNameContainingAndCarType(String carName, String carType) {
+    public List<CarInformationResponseDto> findByCarNameContainingAndCarTypeContaining(String carName, String carType) {
         List<CarInformation> entities = null;
         List<CarInformationResponseDto> dtoEntities = new ArrayList<>();
         try {
-            entities = carInformationRepository.findByCarNameContainingAndCarType(carName, carType);
+            entities = carInformationRepository.findByCarNameContainingAndCarTypeContaining(carName, carType);
 
             for (CarInformation entity : entities) {
                 CarInformationResponseDto result = new CarInformationResponseDto(entity);
