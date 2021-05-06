@@ -60,12 +60,12 @@ public class CarInformationService {
 
         return dtoEntities;
     }
-    /*
-    public List<CarInformationResponseDto> findByCarNameContaining(String carName, String carType) {
+
+    public List<CarInformationResponseDto> findByCarType(String carType) {
         List<CarInformation> entities = null;
         List<CarInformationResponseDto> dtoEntities = new ArrayList<>();
         try {
-            entities = carInformationRepository.findByCarNameContainingAndCarType(carName, carType);
+            entities = carInformationRepository.findByCarType(carType);
 
             for (CarInformation entity : entities) {
                 CarInformationResponseDto result = new CarInformationResponseDto(entity);
@@ -77,5 +77,4 @@ public class CarInformationService {
 
         return dtoEntities;
     }
-     */
 }

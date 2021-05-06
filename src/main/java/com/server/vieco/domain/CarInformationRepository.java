@@ -9,5 +9,6 @@ import java.util.List;
 @Repository
 public interface CarInformationRepository extends JpaRepository<CarInformation, Long> {
 
+    public List<CarInformation> findByCarType(String carType);
     public List<CarInformation> findByCarTypeContainingAndCarNameContaining(String carType, String carName);
 }
