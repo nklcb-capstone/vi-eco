@@ -14,13 +14,13 @@ cache:
 
 script: "./gradlew clean build"
 
+before_install:
+  - chmod +x gradlew
+
 before_deploy:
   - zip -r vi-eco *
   - mkdir -p deloy
   - mv vi-eco.zip deploy/vi-eco.zip
-
-before_install:
-  - chmod +x gradlew
 
 deploy:
   - provider: s3
