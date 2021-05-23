@@ -16,7 +16,7 @@ script: "./gradlew clean build"
 
 before_deploy:
   - zip -r vi-eco *
-  - mkdir -p deloy
+  - mkdir -p deploy
   - mv vi-eco.zip deploy/vi-eco.zip
 
 before_install:
