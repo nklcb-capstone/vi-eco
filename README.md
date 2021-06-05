@@ -66,4 +66,4 @@ https://drive.google.com/file/d/1KYUUMDfIHTYrsMOxEguistyCspA895Dz/view?usp=shari
 
 ## 발표 자료 
 
-![img.png](img.png)
+![image](https://user-images.githubusercontent.com/25001697/120901317-04dd0900-c675-11eb-9a75-db8de84b1a0d.png)
