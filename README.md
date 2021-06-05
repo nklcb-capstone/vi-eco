@@ -61,6 +61,9 @@ Travis CI를 통해 Git에서 Push를 하면 자동 Build 및 Test 적용
 ![](https://i.imgur.com/KcsDIF6.png)
 ![](https://i.imgur.com/IHEffSc.png)
 
+## 발표 영상
+https://drive.google.com/file/d/1KYUUMDfIHTYrsMOxEguistyCspA895Dz/view?usp=sharing
+
 ## 발표 자료 
 
 ![img.png](img.png)
