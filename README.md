@@ -52,7 +52,7 @@ Spring Boot, Gradle, Spinrg Boot JPA, MariaDB, Travis Ci, Java11, AWS, NGINX
 
 비공개 Notion 워크스페이스에 기록
 
-## CI
+## CI/CD
 
 Travis CI를 통해 Git에서 Push를 하면 자동 Build 및 Test 적용
 
