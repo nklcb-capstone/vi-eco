@@ -46,7 +46,7 @@ Rest API형 서버로 클라이언트에게 API를 만들어 제공해주고 있
 
 ## 사용 기술 및 환경
 
-Spring Boot, Gradle, Spinrg Boot JPA, MariaDB, Travis Ci, Java11, AWS, NGINX
+Spring Boot, Gradle, Spinrg Data JPA, MariaDB, Travis Ci, Java11, AWS, NGINX
 
 ## Wiki
 
