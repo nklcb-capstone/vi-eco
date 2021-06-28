@@ -93,7 +93,7 @@ public class CarApiController {
  */
 
 /**
- * 수 자동차 정보 검색 api
+ * 수소차 자동차 정보 검색 api
  * [url]/api/car/information?carName={자동차이름}&type={자동차타입 ex)수소차, 전기}
  */
 
