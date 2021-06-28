@@ -46,13 +46,13 @@ Rest API형 서버로 클라이언트에게 API를 만들어 제공해주고 있
 
 ## 사용 기술 및 환경
 
-Spring Boot, Gradle, Spinrg Boot JPA, MariaDB, Travis Ci, Java11, AWS, NGINX
+Spring Boot, Gradle, Spinrg Data JPA, MariaDB, Travis Ci, Java11, AWS, NGINX
 
 ## Wiki
 
 비공개 Notion 워크스페이스에 기록
 
-## CI
+## CI/CD
 
 Travis CI를 통해 Git에서 Push를 하면 자동 Build 및 Test 적용
 
@@ -61,6 +61,9 @@ Travis CI를 통해 Git에서 Push를 하면 자동 Build 및 Test 적용
 ![](https://i.imgur.com/KcsDIF6.png)
 ![](https://i.imgur.com/IHEffSc.png)
 
+## 발표 영상
+https://drive.google.com/file/d/1KYUUMDfIHTYrsMOxEguistyCspA895Dz/view?usp=sharing
+
 ## 발표 자료 
 
-![img.png](img.png)
+![image](https://user-images.githubusercontent.com/25001697/120901317-04dd0900-c675-11eb-9a75-db8de84b1a0d.png)
